@@ -1,0 +1,29 @@
+<resources>
+    <string name="app_name">RCGauge</string>
+    <string name="app_version">v1.0.0</string>
+    <string name="navigation_drawer_open">Open navigation drawer</string>
+    <string name="navigation_drawer_close">Close navigation drawer</string>
+    <string name="nav_header_title">Android Studio</string>
+    <string name="nav_header_subtitle">rc-throwmeter@gmail.com</string>
+    <string name="nav_header_desc">Navigation header</string>
+    <string name="action_settings">Settings</string>
+    <string name="sensor_bt">Sensor BT</string>
+    <string name="throw_meter">Throw meter</string>
+    <string name="communicate">Communicate</string>
+    <string name="reset_angle">Reset angle</string>
+    <string name="command_throw">Travel</string>
+    <string name="command_angle">Angle</string>
+    <string name="title_paired_devices">Paired device</string>
+    <string name="title_other_devices">Other device</string>
+    <string name="button_scan">Scan</string>
+    <string name="command_maxthrow">Max UP:</string>
+    <string name="command_minthrow">Max DOWN:</string>
+    <string name="raw_data">Data</string>
+    <string name="euler_pitch">Euler pitch</string>
+    <string name="euler_roll">Euler roll</string>
+    <string name="euler_yaw">Euler yaw</string>
+    <string name="max_travels">Max travels :</string>
+    <string name="set_max_travels">Max</string>
+    <string name="set_min_travels">Min</string>
+
+</resources>

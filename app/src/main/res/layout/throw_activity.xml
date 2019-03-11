@@ -1,0 +1,156 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:tools="http://schemas.android.com/tools"
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+    <data>
+        <variable
+            name="CommandthrowViewModel"
+            type="com.pitchgauge.j9pr.pitchgauge.ThrowGaugeViewModel"/>
+    </data>
+
+    <android.support.constraint.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <android.support.design.widget.TextInputLayout
+            android:id="@+id/textInputLayout"
+            android:layout_width="200dp"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="4dp"
+            app:error="@{CommandthrowViewModel.errorChord}"
+            app:errorEnabled="true"
+            android:gravity="center"
+            app:layout_constraintBottom_toTopOf="@+id/inAngle"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintVertical_chainStyle="spread_inside">
+
+            <EditText
+                android:id="@+id/inChord"
+                android:layout_width="200dp"
+                android:layout_height="wrap_content"
+                android:hint="Chord"
+                android:inputType="numberDecimal"
+                android:padding="8dp"
+                android:textSize="40dp"
+                android:text="@={CommandthrowViewModel.Chord}" />
+
+        </android.support.design.widget.TextInputLayout>
+
+        <TextView
+                android:id="@+id/inAngle"
+                app:layout_constraintBottom_toTopOf="@+id/outTravel"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/textInputLayout"
+                android:layout_width="match_parent"
+                android:gravity="center"
+                android:layout_height="wrap_content"
+                android:hint="@string/command_angle"
+                android:padding="8dp"
+                android:textSize="40dp"
+                android:text="@{CommandthrowViewModel.Angle}" />
+
+        <TextView
+                android:id="@+id/outTravel"
+                app:layout_constraintBottom_toTopOf="@+id/maxTravels"
+                app:layout_constraintEnd_toStartOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/inAngle"
+                android:layout_width="match_parent"
+                android:gravity="center"
+                android:layout_height="wrap_content"
+                android:hint="@string/command_throw"
+                android:padding="8dp"
+                android:textSize="40dp"
+                android:text="@{CommandthrowViewModel.Travel}" />
+
+        <TextView
+            android:id="@+id/maxTravels"
+            app:layout_constraintBottom_toTopOf="@+id/inMaxThrow"
+            app:layout_constraintEnd_toStartOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/outTravel"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:hint="@string/command_throw"
+            android:padding="8dp"
+            android:textSize="20dp"
+            android:text="@string/max_travels" />
+
+        <TextView
+            android:id="@+id/inMaxThrow"
+            app:layout_constraintHorizontal_weight="2"
+            app:layout_constraintBottom_toTopOf="@+id/inMinThrow"
+            app:layout_constraintEnd_toStartOf="@+id/buttonSetMaxTravel"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/maxTravels"
+            android:background="@{CommandthrowViewModel.MaxTravelColor}"
+            android:hint="@string/command_maxthrow"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="40dp"
+            android:layout_marginEnd="8dp"
+            android:textSize="20dp"
+            android:text="@{CommandthrowViewModel.MaxTravel}" />
+
+        <Button
+            android:id="@+id/buttonSetMaxTravel"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginEnd="8dp"
+            android:text="@string/set_max_travels"
+
+            android:padding="10dp"
+            app:layout_constraintHorizontal_weight="1"
+            app:layout_constraintBottom_toTopOf="@+id/inMinThrow"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toEndOf="@+id/inMaxThrow"
+            app:layout_constraintTop_toBottomOf="@+id/maxTravels" />
+
+        <TextView
+            android:id="@+id/inMinThrow"
+            app:layout_constraintHorizontal_weight="2"
+            app:layout_constraintBottom_toTopOf="@+id/button"
+            app:layout_constraintEnd_toStartOf="@+id/buttonSetMinTravel"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/inMaxThrow"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="40dp"
+            android:layout_marginEnd="8dp"
+            android:background="@{CommandthrowViewModel.MinTravelColor}"
+            android:hint="@string/command_minthrow"
+            android:textSize="20dp"
+            android:text="@{CommandthrowViewModel.MinTravel}" />
+
+        <Button
+            android:id="@+id/buttonSetMinTravel"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginEnd="8dp"
+            android:text="@string/set_min_travels"
+
+            app:layout_constraintHorizontal_weight="1"
+            app:layout_constraintBottom_toTopOf="@+id/button"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toEndOf="@+id/inMinThrow"
+            app:layout_constraintTop_toBottomOf="@+id/inMaxThrow" />
+
+        <Button
+            android:id="@+id/button"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/reset_angle"
+            android:onClick="@{()-> CommandthrowViewModel.onResetAngleClicked()}"
+            android:padding="40dp"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/inMinThrow" />
+
+    </android.support.constraint.ConstraintLayout>
+
+
+</layout>
